@@ -1,0 +1,136 @@
+ Appium is an open-source cross platform (Android & iOS) mobile automation tool for testing native, browser, &
+ hybrid mobile apps.
+
+
+                              3 different techniques of Appium Mobile Automation: 
+
+ 1- Automation for Native app :             [App exclusively built for either an Android or an iOS operating system.]
+ 2- Automation for Hybrid Android app  :    [App Involving Android + Web]
+ 3- Automation for Hybrid iOS Hybrid app:   [App Involving iOS + Web]
+
+
+ Appium utilizes WebDriver Json wire (Just as Selenium) but PLUS additional capabilities that support mobile
+ gestures such as scrolling, zooming, & long pressing.
+ ------------------------------------------------------------------------------------------------------------
+ 
+ Other mobile automation tools out there: 1- Selenium Android (Only for Android).
+                                          2- Kalabash (Only for iOS).
+                                          2- Robotium (Only for iOS).
+                                         
+and a few other tools that only work for one platform. However; Appium is the ONLY cross platform mobile automation tool.
+
+Appium can be used with Java, C#, Python, Ruby, & Javascript (Just like Selenium Web Driver).
+
+
+                                              
+******************************************************************Appium architecture***************************************************************************************
+                 ********************For the diagram, consult "Appium Architecture.png" situated at the project level****************
+
+ Appium client code is our Appium script. 
+ Appium Server sits on node js. This server has to be started on some port (4723) before executing the scripts. It keeps on listening 
+ so that when the client code is executed, this code has instructions to be re-directed via a port (4723) in a JSON format [ Hence to the Appium server]
+ As the Appium server expects a Json input. [No matter what language one uses: Java, Python, etc. Once the code is executed, then Appium
+ will covert this code in Json format.
+ 
+ Now- This Appium server has the capability of interpreting this Json file, emulating user interactions on Android devices using UIAutomator2
+ or simulating user interactions on iOS devices using XCUITest. Then, data travels in the opposite direction from the devices, as a response,
+ in Json format being relayed by the Appium server back to the Appium Client code that has the ability to parse the response Json giving
+ the output to the user.
+ 
+ UIAutomator2 & XCUITest are frameworks similar to the 3rd party browser drivers in Selenium where the browsers' developers for Chrome, firefox,
+ Safari, etc. will not allow a third party API (such as Selenium) to directly invoke their browsers (For security reasons). Hence, instead,
+ these browser developers themselves developed a 3rd party browser drivers and made it available for Selenium users in order to use them
+ for invoking the browsers.
+ 
+ Same concept applies for Appium:  Andoid and iOS developers will not allow a third party API (Such as Appium) to directly emulate or
+ simulate user interactions on the mobile devices. Therefore, they created the  UIAutomator2 & XCUITest frameworks making it available
+ for Appium users in order to emulate/simulate user interactions on the mobile devices.
+ 
+ ==================================================================================================================================================
+ 
+ Starting with Appium: (A quick set-up to get Appium up and running as real-time Appium set-up instructions will be provided later in the notes)
+ 
+ 1- Download and install the latest Java JDK on your local machine. It has to be the exact same version that Jenkins will run on. 
+ 2- Configure System variables so that Java compiler is now usable by your system:
+  		Java_Home will point to the correct JDK version that compiles the Java code (If multiple JDK's are installed).
+  		
+  		
+ 3* For Windows users =====>
+ 
+  A- Download & install Android Studio. Then, find the path for the built-in Android SDK where 4 values will be set in System Variables [To work with Android apps].
+ 
+      [Ex: Built-in Android SDK is found in  C:\Users\AE\AppData\Local\Android\Sdk] where 'AppData' might be in an invisible mode.
+      Note: Android SDK [provides the emulator PLUS tools for developing Android applications, including compilers, & debuggers == All inside the folder]. 
+      Therefore, it needs to be included in the System variables so that it's usable by your system.
+      
+      
+      
+******************************************** 4 values to set in the 'System Variables' section: ANDROID_HOME, and 3 'Path' values ********************************************
+              
+     1- Setting 'ANDROID_HOME': In System variables section, Click on 'New':
+      	Variable name :  ANDROID_HOME
+        Variable value:  C:\Users\AE\AppData\Local\Android\Sdk 
+        
+     2- Setting 3 'paths' values:     
+      
+      Now, inside the Sdk folder [C:\Users\AE\AppData\Local\Android\Sdk], you'll NOT see the 'Tools' folder.  To make it visible:
+     
+      1- Go to the folder where Android Studio has been installed: C:\Program Files\Android\Android Studio
+      2- Android Studio > bin > Studio64  [In order to Launch Android Studio]
+      3- New Project > Empty Activity > 'New project' window appears > Finish.
+      4- Android Studio is now launched with Jars being imported as displayed in the bottom right corner. Wait till it's complete.
+      
+      5- Navigate to: Tools > You should now see 'Device Manager' & 'SDK Manager'.
+      6- Click on 'SDK Manager' > 'Settings' window appears > Select 'SDK Tools' tab (Because we need to have 'Tools' folder, inside the 'Sdk' folder, visible)
+      7- Un-check 'Hide Obsolete packages' > In the list, the check box of "Android SDK Tools(Obsolete) appears ! > Select it.
+      8- Click on Apply > Components will be installed > msg: "Installing Android SDK Tools in:  C:\Users\AE\AppData\Local\Android\Sdk\tools.
+      9- Finish > Ok
+      10. Now 'Tools' folder should be present in:   C:\Users\AE\AppData\Local\Android\Sdk.
+      
+      
+      Navigate to:  C:\Users\AE\AppData\Local\Android\Sdk\tools    &    Copy the path
+      In System Variables on bottom, double-click on 'path'> New > and paste it.
+      
+      
+      Navigate to:  C:\Users\AE\AppData\Local\Android\Sdk\tools\bin    &    Copy the path
+      In System variables on bottom, double-click on 'Path' > New> and paste it.
+      
+      navigate to: C:\Users\AE\AppData\Local\Android\Sdk\platform-tools  &    Copy the path    
+      In System variables on bottom, double-click on 'Path' > New> and paste it.             [Not mandatory but might be good to have]
+*******************************************************************************************************************************************************************************      
+      Note: Node.js is a software that has an npm command line.
+  	 	This npm command line is used to install any node module such as Appium server, angular js, Protractor, etc.
+      
+  B- Download & install Node.js  [.msi file for Windows. Currently under the tab of 'pre-build installer'] 
+  	 It's path can be found at: C:\Program Files\nodejs.
+  	 
+  	 Under, 'System Variables' > New >   Variable name:   NODE_HOME
+  	                                     Variable value:  C:\Program Files\nodejs
+  	                                     
+  	 Navigate to: C:\Program Files\nodejs\node_modules\npm\bin   & Copy the path
+  	 In System Variables on bottom, double-click on 'path'> New > and paste it.
+  	 
+  	 Notice the npm folder !
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 	
+  C- Configure the Emulator virtual android device on which an Android application is deployed and automated using Appium.
+  		Launch the Android Studio > File > New > New Project > Empty Activity (Or basic Activity) > New project window appears > Finish
+  		> Notice: Loading configurations are shown in the bottom right corner (Loading everything depends on RAM).
+  		  As multiple pluggins are integrated into the studio.
+  		  
+  		  Now, Tools > Device manager (Where a customized virtual android device is created) > In 'Device Manager' window click on the + sign
+  		       > Create Virtual Device > Now: Choose a physical device (Each device has Pixels, physical dimensions, & a resolution).
+  		       
+  		       	Select: Pixel 3a  5.6" > Next > System Image: (Operating System OS for Android) [Go with whatever is selected by default) unless,
+  		        you have a specific OS requirement to deploy on and automate the app > Next > In Android Virtual Device (AVD) window: Give device name (AVD name)
+  		        + remember this exact name of the device as it needs to be inputed in appium code in order to invoke this particular emulator (Android virtual device).
+  		        
+  		        Now, examine "Show Advanced Setting" button: This is where you can increase the RAM if virtual device is very slow & resulting in test failures.
+  		        But, keep the default values as they're checking how the device is performing.
+  		  
+  		
+  	                                     
+  	                                     
+  
+ 
+ 

@@ -98,8 +98,19 @@ Appium can be used with Java, C#, Python, Ruby, & Javascript (Just like Selenium
       navigate to: C:\Users\AE\AppData\Local\Android\Sdk\platform-tools  &    Copy the path    
       In System variables on bottom, double-click on 'Path' > New> and paste it.             [Not mandatory but might be good to have]
 *******************************************************************************************************************************************************************************      
-      Note: Node.js is a software that has an npm command line.
-  	 	This npm command line is used to install any node module such as Appium server, angular js, Protractor, etc.
+      Note: Node.js is a software that has a command prompt.
+  	 	    In this command prompt, npm commands are used to install any node related package/module module such as Appium server, angular js, Protractor, etc.
+  	 	    
+  	 	    Ex: On npm website (As of now: https://www.npmjs.com/), search for 'Appium':
+  	 	        One would see in the results: appium (Automation for Apps), etc, etc, PLUS webDriverio (Also a node related package used for Selenium with JavaScript)
+  	 	        So, one would get the displayed appium in results (Appium is nothing but Jars of libraries) using an npm command.
+  	 	    
+  	 	    
+  	 	    npm stands for 'Node Package Manager'.
+  	 	    From Wiki: ""npm is a package manager for the JavaScript programming language maintained by npm, Inc., a subsidiary of GitHub. npm is the default package manager 
+  	 	    for the JavaScript runtime environment Node.js and is included as a recommended feature in the Node.js installer""
+
+It consists of a command line client, also called npm, and an online database of public and paid-for private packages, called the npm registry. The registry is accessed via the client, and the available packages can be browsed and searched via the npm website. The package manager and the registry are managed by npm, Inc. 
       
   B- Download & install Node.js  [.msi file for Windows. Currently under the tab of 'pre-build installer'] 
   	 It's path can be found at: C:\Program Files\nodejs.
@@ -126,10 +137,91 @@ Appium can be used with Java, C#, Python, Ruby, & Javascript (Just like Selenium
   		        + remember this exact name of the device as it needs to be inputed in appium code in order to invoke this particular emulator (Android virtual device).
   		        
   		        Now, examine "Show Advanced Setting" button: This is where you can increase the RAM if virtual device is very slow & resulting in test failures.
-  		        But, keep the default values as they're checking how the device is performing.
-  		  
-  		
-  	                                     
+  		        But, keep the default RAM and other values as they're checking how the device is performing.
+  		        
+  		        Now, the device will be shown in Android Studio, under Device Manager.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Windows:
+ D- Install Appium Server via Node.js command prompt (Run as Admin) using the npm command of:   npm install -g appium (That's it !)
+  	[-g: means installing appium globally so it could be used anywhere in your system].
+  	  
+    So this command prompt is available because we downloaded node.js, installed it, and set it in System Variables so that it is usable by our system.
+    if you do not set node.ja in Systems variables, then npm commands throws an error message conveying that 'npm' is not recognized by internal or external command.
+    
+   To check if appium was installed:  appium --version
+   
+   Now, run Appium Server in command line using :  appium (That's it !)  ["" Welcome to Appium ""] is a message on the first line.
+   Where the following message is normal: " No plugins activated. Use the --use-plugins flag with names of plugins to activate"
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  		 
+  E- Download Eclispe editor, Create a Maven project (pom.xml) file, Include dependencies for Appium and TestNG framework.
+      Eclipse is the most famous editor for all Java related projects [Intelligi editor could also be used instead]
+      
+      Google Eclipse> Select 'Download Packages' > Install: Eclipse IDE for Java Developers (Where it includes 'maven' in the description) 
+      .Don't choose 'Eclipse IDE for Enterprise Java and Web Developers' as this is going to slow down your system.
+      
+      Now, Open eclipse and create a Maven project: File > New > Maven project. [Note that creating a maven project has been made easy as of recently just
+      following these steps. Before that, creating maven project involved using command lines where a maven skeleton (A collection of folders) is created 
+      and saved somewhere on your local PC. Then, this skeleton is imported into eclipse. This old way of creating a maven project is documented in the hand-
+      written notes].
+      
+      So for: Open Eclipse > File > New > Maven project> Now, one has to select the maven temple of: "maven-archetype-quickstart" (For Apache). This is one of the most 
+      popular templates in test automation projects. Where one has to specify group ID (Package name) & Artifact ID (Project name). Now, once project is created 
+      in the left side, expand on it. You'll notice that a pom.xml file has been created. This is the heart of maven !. Maven is nothing but a pom.xml file !. 
+      SO whenever you hear 'maven', then = pom.xml file ! pom.xml file = Maven ! (Can't emphasize enough !)
+      
+      Now, in maven (pom.xml file), you will notice a  maven dependency automatically included with the values of GroupID and ArtifactID That I
+      specified during the creation of the Maven project. J-unit dependency(s) will also be included but REMOVE it/them ALL, as our project will be using
+      TestNG framework which is much more advanced and the ONLY thing to be used in real-time projects. 
+      
+      ***First thing, Are we going to use Selenium, Appium, or Rest API ? 
+      Answer is, Appium (Appium is nothing but library jars). So, in Maven repository (https://mvnrepository.com/) type in, "Appium".. select Appium Java Client.
+      & Choose the latest version & copy the dependency. Paste it into maven (pom.xml file) UNDER <dependencies> and NOT UNDER <dependencyManagement>
+      
+      and SAVE. You should be able to see Jars being imported AS LONG AS the setting of:    Project > Build Automatically is selected. 
+      and if Not: Right-click on the project > Maven >Update Project.
+      So now, Appium Jars should be present under the folder of "Maven Dependencies" under the project.
+      
+      ***Secondly, Included TestNG dependencies. So, in Maven repository (https://mvnrepository.com/) type in, "Appium". Choose the latest versions. Copy & paste 
+      the dependency in maven (pom.xml file) and SAVE.
+      so that, you should be able to see Jars being imported AS LONG AS the setting of:    Project > Build Automatically is selected. 
+      and if Not: Right-click on the project > Maven >Update Project.
+      So now, TestNG Jars should be present under the folder of "Maven Dependencies" under the project.
+      
+      CRUCIAL NOTE:******= As of now, All dependencies in Maven (pom.xml file) will have their respective jars included under 
+                           the 'Maven Dependencies' folder in the project. In the case that, test cases/methods are being compiled 
+                           by a TestNG version that is different than the one specified in the testNg dependency that's included in 
+                           maven (the pom.xml file), then==========>
+                           This is USUALLY due to other version of testNG jars being present under a folder named 'TestNG'
+                           (This could've happened for whatever reason. Doesn't matter). Hence, simply delete EVERYTHING
+                           under this 'TestNG' folder in the project. Now, methods/test cases should be compiled using ONLY
+                           the TestNG version specified in the dependency present in maven (The pom.xml file). 
+      
+      Now, IMMEDIATELY (We're NOT done), install the TestNG plugging into Eclipse (Details are in hand-written notes):
+      
+      	
+      
+      
+      
+      
+      Once testNG plugging is included in Eclipse, then one has the ability to right click on a .java class file that 
+      has at least one TestNg method/test case > Run As > TestNg (Should be present). 
+      
+      Now, right-click on the project > TestNG > Convert to TestNG (To create a testNG.xml file) > In Re-factoring window: You can choose 'Classes' option 
+      or 'packages' option as a way to include your TestNG methods/test cases. ===> Now, TestNG.xml file will be created which will include all the current methods/
+      test cases that ONLY utilize the TestNG compiler (Which is the only way in real-time projects). [Visit the hand-written notes for Maven & TestNg].
+      
+      Now, the next step is to integrate this testNg xml file with Maven (With the pom.xml file). This is done by including the SureFire plugging dependency
+      into maven (The pom.xml file). There are many versions of that SureFire Plugging dependency. But, the ONLY one that's useful for real-time
+      is the one with the 'profile' section inside it. [ where for example: a profile will have the id of 'regression' pointing to regressionTestNG.xml file &
+      a second profile section with id of 'smoke' for example pointing to smokeTestNg.xml file]
+      .... and now this Maven (pom.xml file) will be, in turn, integrated with a continous integration tool such as Jenkins and things develop from there..!
+      
+      .nevertheless, after including the SureFire plugging dependency, we're going to gradually include all other needed dependencies.
+      
+      
+   	
+  		                                      
   	                                     
   
  

@@ -1,0 +1,57 @@
+2025-04-14 13:41:07 - [32minfo[39m: Creating configuration file...
+2025-04-14 13:41:07 - [34mdebug[39m: requireModuleV3 :: module - @playwright/test/package.json, package - @playwright/test
+2025-04-14 13:41:07 - [34mdebug[39m: requireModuleV2 :: module - @playwright/test/package.json, package - @playwright/test
+2025-04-14 13:41:07 - [34mdebug[39m: requireModuleV3 :: module - selenium-webdriver/package.json, package - selenium-webdriver
+2025-04-14 13:41:07 - [34mdebug[39m: Unable to resolve module with requireModuleV3 with error: Error: Cannot find module 'selenium-webdriver'
+Require stack:
+- C:\Users\AE\Cinco\node_modules\browserstack-node-sdk\src\helpers\helper.js
+- C:\Users\AE\Cinco\node_modules\browserstack-node-sdk\src\bin\setup.js
+2025-04-14 13:41:07 - [34mdebug[39m: requireModuleV2 :: module - selenium-webdriver/package.json, package - selenium-webdriver
+2025-04-14 13:41:07 - [34mdebug[39m: Getting selenium-webdriver/package.json from C:\Users\AE\Cinco
+2025-04-14 13:41:07 - [34mdebug[39m: selenium-webdriver/package.json doesn't exist at C:\Users\AE\Cinco
+2025-04-14 13:41:07 - [34mdebug[39m: Getting selenium-webdriver/package.json from path C:\Users\AE\Cinco
+2025-04-14 13:41:07 - [34mdebug[39m: Getting selenium-webdriver/package.json from null
+2025-04-14 13:41:07 - [34mdebug[39m: Error while loading package. Error: selenium-webdriver/package.json doesn't exist.
+2025-04-14 13:41:07 - [34mdebug[39m: requireModuleV3 :: module - selenium-webdriver/package.json, package - selenium-webdriver
+2025-04-14 13:41:07 - [34mdebug[39m: Unable to resolve module with requireModuleV3 with error: Error: Cannot find module 'selenium-webdriver'
+Require stack:
+- C:\Users\AE\Cinco\node_modules\browserstack-node-sdk\src\helpers\helper.js
+- C:\Users\AE\Cinco\node_modules\browserstack-node-sdk\src\bin\setup.js
+2025-04-14 13:41:07 - [34mdebug[39m: requireModuleV2 :: module - selenium-webdriver/package.json, package - selenium-webdriver
+2025-04-14 13:41:07 - [34mdebug[39m: Getting selenium-webdriver/package.json from C:\Users\AE\Cinco
+2025-04-14 13:41:07 - [34mdebug[39m: selenium-webdriver/package.json doesn't exist at C:\Users\AE\Cinco
+2025-04-14 13:41:07 - [34mdebug[39m: Getting selenium-webdriver/package.json from path C:\Users\AE\Cinco
+2025-04-14 13:41:07 - [34mdebug[39m: Getting selenium-webdriver/package.json from null
+2025-04-14 13:41:07 - [34mdebug[39m: Error while loading package. Error: selenium-webdriver/package.json doesn't exist.
+2025-04-14 13:41:07 - [34mdebug[39m: Firing SDK event for funnel data: {"userName":"[REDACTED]","accessKey":"[REDACTED]","event_type":"SDKSetup","detectedFramework":"","optimalHubUrl":[],"event_properties":{"testhub_uuid":"","product_map":{"observability":true,"accessibility":false,"percy":false,"automate":true,"app_automate":false,"central_scanner":false,"lcnc":false},"productMap":{"observability":true,"accessibility":false,"percy":false,"automate":true,"app_automate":false,"central_scanner":false,"lcnc":false},"language_framework":"node-setup","referrer":"nodeagent/1.34.52","frameworkVersion":null,"automationFramework":"selenium","automationFrameworkVersion":null,"language":"nodejs","languageVersion":"v23.3.0","product":["automate","observability"],"buildName":"browserstack build","buildIdentifier":"#${BUILD_NUMBER}","os":"Windows_NT","hostname":"Ahmad","seleniumVersion":null}}
+2025-04-14 13:41:07 - [32minfo[39m: Adding new script(s) in package.json...
+2025-04-14 13:41:07 - [32minfo[39m: Setup completed
+2025-04-14 13:41:08 - [34mdebug[39m: API Event SDKSetup response - {"data":{"message":"SDK Event recorded successfully"},"body":"{\"message\":\"SDK Event recorded successfully\"}","statusCode":200}
+2025-04-14 18:37:19 - [32minfo[39m: Creating configuration file...
+2025-04-14 18:37:19 - [34mdebug[39m: requireModuleV3 :: module - @playwright/test/package.json, package - @playwright/test
+2025-04-14 18:37:19 - [34mdebug[39m: requireModuleV2 :: module - @playwright/test/package.json, package - @playwright/test
+2025-04-14 18:37:19 - [34mdebug[39m: requireModuleV3 :: module - selenium-webdriver/package.json, package - selenium-webdriver
+2025-04-14 18:37:19 - [34mdebug[39m: Unable to resolve module with requireModuleV3 with error: Error: Cannot find module 'selenium-webdriver'
+Require stack:
+- C:\Users\AE\Cinco\node_modules\browserstack-node-sdk\src\helpers\helper.js
+- C:\Users\AE\Cinco\node_modules\browserstack-node-sdk\src\bin\setup.js
+2025-04-14 18:37:19 - [34mdebug[39m: requireModuleV2 :: module - selenium-webdriver/package.json, package - selenium-webdriver
+2025-04-14 18:37:19 - [34mdebug[39m: Getting selenium-webdriver/package.json from C:\Users\AE\Cinco
+2025-04-14 18:37:19 - [34mdebug[39m: selenium-webdriver/package.json doesn't exist at C:\Users\AE\Cinco
+2025-04-14 18:37:19 - [34mdebug[39m: Getting selenium-webdriver/package.json from path C:\Users\AE\Cinco
+2025-04-14 18:37:19 - [34mdebug[39m: Getting selenium-webdriver/package.json from null
+2025-04-14 18:37:19 - [34mdebug[39m: Error while loading package. Error: selenium-webdriver/package.json doesn't exist.
+2025-04-14 18:37:19 - [34mdebug[39m: requireModuleV3 :: module - selenium-webdriver/package.json, package - selenium-webdriver
+2025-04-14 18:37:19 - [34mdebug[39m: Unable to resolve module with requireModuleV3 with error: Error: Cannot find module 'selenium-webdriver'
+Require stack:
+- C:\Users\AE\Cinco\node_modules\browserstack-node-sdk\src\helpers\helper.js
+- C:\Users\AE\Cinco\node_modules\browserstack-node-sdk\src\bin\setup.js
+2025-04-14 18:37:19 - [34mdebug[39m: requireModuleV2 :: module - selenium-webdriver/package.json, package - selenium-webdriver
+2025-04-14 18:37:19 - [34mdebug[39m: Getting selenium-webdriver/package.json from C:\Users\AE\Cinco
+2025-04-14 18:37:19 - [34mdebug[39m: selenium-webdriver/package.json doesn't exist at C:\Users\AE\Cinco
+2025-04-14 18:37:19 - [34mdebug[39m: Getting selenium-webdriver/package.json from path C:\Users\AE\Cinco
+2025-04-14 18:37:19 - [34mdebug[39m: Getting selenium-webdriver/package.json from null
+2025-04-14 18:37:19 - [34mdebug[39m: Error while loading package. Error: selenium-webdriver/package.json doesn't exist.
+2025-04-14 18:37:19 - [34mdebug[39m: Firing SDK event for funnel data: {"userName":"[REDACTED]","accessKey":"[REDACTED]","event_type":"SDKSetup","detectedFramework":"","optimalHubUrl":[],"event_properties":{"testhub_uuid":"","product_map":{"observability":true,"accessibility":false,"percy":false,"automate":true,"app_automate":false,"central_scanner":false,"lcnc":false},"productMap":{"observability":true,"accessibility":false,"percy":false,"automate":true,"app_automate":false,"central_scanner":false,"lcnc":false},"language_framework":"node-setup","referrer":"nodeagent/1.34.52","frameworkVersion":null,"automationFramework":"selenium","automationFrameworkVersion":null,"language":"nodejs","languageVersion":"v23.3.0","product":["automate","observability"],"buildName":"browserstack build","buildIdentifier":"#${BUILD_NUMBER}","os":"Windows_NT","hostname":"Ahmad","seleniumVersion":null}}
+2025-04-14 18:37:19 - [32minfo[39m: Setup completed
+2025-04-14 18:37:19 - [34mdebug[39m: API Event SDKSetup response - {"data":{"message":"SDK Event recorded successfully"},"body":"{\"message\":\"SDK Event recorded successfully\"}","statusCode":200}

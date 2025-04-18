@@ -9,12 +9,12 @@ const Config = ({
   testDir: './tests',
 
   //https://playwright.dev/docs/test-timeouts
-  timeout: 50 * 1000,   // for every step. 
+  timeout: 30 * 1000,   // for every step. 
   //Equivalent to implicit & explicit wait in selenium [for a locator to be found in the list of HTML mark-ups
   // regardless whether its associated element in the UI is loaded or not 
   expect: {
     // Maximum time expect() should wait for assertions [for an element to be identified]
-    timeout: 5*1000, // 5 seconds
+    timeout: 15*1000, // 5 seconds
   },
   reporter: 'html', // 'html' is the default one.
 
@@ -29,7 +29,7 @@ const Config = ({
     
     screenshot: 'only-on-failure', 
     // 'on' it captures a screenshot of every step/action that's performed (Too much ! but sometimes it's asked for)
-    trace: 'on', // 'on' so you get detailed report for each automation step you're performing.
+    trace: 'off', // 'on' so you get detailed report for each automation step you're performing.
                                // 'on' eats up your memory (detailed explanation will be encountered below) 
                                // 'retain-on-failure'
   },

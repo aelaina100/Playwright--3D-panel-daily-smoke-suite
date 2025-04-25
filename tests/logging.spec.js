@@ -1,96 +1,147 @@
-const { test, expect } = require('@playwright/test'); // what instructor has been using //add the 'expect' here only
-//test.describe.configure({mode: 'parallel'}); // makes tests in this .spec.js file run parallelly
-// Test cases in this .spec.js class file:
-//Ensure the app URL is not brocken.
-//Ensuring that the 'Enter' button is displayed & clickable
-//Ensure that user can navigate to the pannels page (present) when clicking on 'Enter'.
-//Ensure that each panel can be navigated to and all the way down
-// Ensuring the typing your name in the edit box reflects back in text on UI (As the AI utters the name).
+const { test, expect, request } = require('@playwright/test'); 
+// In Playwright the default behavior is that- All tests within the same .spec.js file should run perfectly serially where no test depends on the next one.
+// However; this default config. can be hikacked utilizing the below options:
 
-test('Smoke Test: Ensuring app URL is not brocken', async ({ page }) => {
-  // Navigate to cinco's url:
-  await page.goto('https://qa-cinco.xspace.domains');
-  // Ensures that the url is not brocken: [By ensuring the 'CINCO' logo is present.]:
-     // Lines below ensure that the box element holding the logo text is fully loaded and present in the UI:
-  const logoBox= page.locator("img[class*='Logo']");
-  await logoBox.waitFor();
-    //additionally: Checking if logo text is present (will be omitted and included in a regression testcase)
-  expect(await logoBox.textContent()).not.toBeNull();
-  await page.close();
+//test.describe.configure({ mode: 'parallel' }); // tests in here will run parallelly
+//test.describe.configure({ mode: 'serial' }); // tests in here will run serially where a test executes only when the one before it passes !(inter-dependency)
+
+                                            
+const {POManager} = require('../pageobjects/POManager');
+const { LoginPage }=require('../pageobjects/LoginPage'); 
+//Json ->String->js object
+const urldataset = JSON.parse(JSON.stringify(require("../utils/loggingTestDataUrl.json"))); // converting this json into a Javascript object so it is easier to access
+const panelNumbersdataset = JSON.parse(JSON.stringify(require("../utils/loggingTestDataPanelNum.json")));    
+//Urgent: Not only pages are accessible, but they should be the CORRECT pages
+
+/*npx playwright test && node send-to-slack.js  //1- this command will ONLY publish PASSED tests
+                                                // if one fails, then nothing is published to Slack
+                                                // fix it !  >> DeepSeek eventually suggested
+                                                // wrapping the code in an exception handling statement.
+
+                                                //2- 'test.only' testcase, if passed, will publish a report to
+                                                  // slack showing ALL the other testcases as passed as well
+                                                  // even though and indeed only one test was executed by Playwright
+*/
+
+test('@smoke Verify the URL loads the expected Cinco URL successfully' , async ({ page }) => {  
+  //Note: "404 Not Found" or "Server Not Available."
+  const expectedPageTitle= "Cinco AI Experience R3gn";   //XSPACE R3a  //Cinco AI Experience R3g
+  await page.goto(urldataset.URL);  // if not accessible this step fails. Not the next one !//urldataset.URL
+  // but sometimes it passes even if the url is not valid (ex: https://www.google.ca/s)
+
+     // To include:
+     // 1- Verify the URL returns a 200 OK status:  watch the lecture
+     /*const response = await request.
+     expect(response.status()).toBe(200); // 200 OK */
+
+     //2- Verify the title of the page:
+    await expect(page, "Expecting page title to be:  " + expectedPageTitle).toHaveTitle(expectedPageTitle);  //Auto-retrying assertion
+     //3- Confirm browsers's current URL is the expected one (No unexpeted re-direct):
+     await expect(page, "Checking for unexpected re-direct from the current URL ").toHaveURL(urldataset.URL + "/intro");
+     //await page.close(); // including this line in ALL test cases will make them run one by one instead of 
+                           // parallelly running (parallell renders the system slow and a some testcase(s) will fail
+                           // as a result.)
+                           //.However; screenshot: '0n' will not render a screenshot as this step is performed
+                           //after the last line.
+                           //Is there a way to make testcases run one after the other without including this line ?
+                           
 });
 
+/* first old testcases
+   // April 19th- passed examination. requires reviewing debugging steps.
+test('Verify that the URL loads the expected webpage successfully', async ({ page }) => {  
+  //Note: "404 Not Found" or "Server Not Available."
+  const poManager= new POManager(page);
+  const loginPage =poManager.getLoginPage();
+  await page.goto(urldataset.URL);  // if not accessible this step fails. Not the next one !
+  await expect(loginPage.logoBox, "Web page should be reachable").toBeAttached(); 
+  //await page.close(); // this should be a part of the tear down code in the first place. 
+                        // for now, it's commented out becasue I want to see a screenshot even when test passes
+                        // as  screenshot: 'on' in the playwright configuration.js file.
+});
+*/
+// April 17th works
+test.only('@smoke Validating that [ENTER] button becomes visible', async ({ page }) => {
+  const poManager= new POManager(page);
+  const loginPage =poManager.getLoginPage();
+  await page.goto(urldataset.URL); 
 
-test('Smoke Test: Validating that [ENTER] button is visible & clickable', async ({ page }) => {
-  // Navigate to cinco's url:
-  await page.goto('https://qa-cinco.xspace.domains');
-  // Ensure that the "ENTER" button is fully loaded/displayed on the UI:
-  await page.locator("button").waitFor(); 
-  await page.close();
+  // * The loading 'box' disappears ( Ask whether the loader should always appear & Ask about the maximum loading time). based on that include/not include a validation.
+ 
+
+// when the 'ENTER' button of div[class*= 'EnterContainer'] is not yet visible in the UI, the controller can still locate its 
+//associated HTML mark up which has 'opacity' of 0
+// However, when it becomes visible (the enter button) it will have opacity of: 1
+
+ // - Validating if the ENTER button is visible on the screen after the loader disappears (finishes loading). (to optimize the code, use visibiblity ASSERTION)
+await expect(page.locator("div[class*= 'EnterContainer'][style*= 'opacity: 1']"), "Expecting the ENTER button is visible to user").toBeVisible(); // utilizing regular expressions for the value of the attribute.!
+
+ //await page.close(); 
 });
 
+test('@smoke Validate the 6-panel page is accessible to users after clicking on ENTER', async ({browser})=> {
+const { context, page, loginPage } = await LoginPage.createWithContext(browser);
+await loginPage.navigateToUrlAndPressEnter();
+//This is done by validating that the 'Toggle Chat' button is visible.
+await expect(loginPage.ToggleChat,"Expecting the Toggle Chat button to be visible to users").toBeVisible(); // to know page is not brocken.
+                                                                                              
 
+});
 
+//works April 17th ! // work is here ~!
 
-test('Validate that the user can navigate to the Panels page and that the page loads without errors', async ({browser})=> 
-{
- const context= await browser.newContext({
- permissions: ['geolocation'],// 'microphone' not added = denying mirco. permission.
-  // Optional: set a mock location
-  geolocation: { latitude: 45.5019, longitude: -73.5674 }, // Montreal
-  // Optional: set browser locale
-  locale: 'en-CA'
- });
-const page= await context.newPage();  
-await page.goto('https://qa-cinco.xspace.domains');
-//await page.pause();
-await page.locator("button").click(); // clicking on the 'ENTER' button.
-//If the speaker's element is displayed = panel page is loaded.
-await page.locator("div[aria-label= 'Toggle chat'] canvas").waitFor();  // Also helps ensure page is fully loaded.audio element Identified as long as its not muted.
-await page.close(); });
+const panelNames = [
+  "An Intro to Cinco",
+  "Cinco’s XM Solutions",
+  "Cinco AI Experience",
+  " How We Work",
+  "Case Studies"
+];
+for(const data of panelNumbersdataset){
+  test(`@smoke Verify that ${data.panelnumb} [${panelNames[data.index]}] is accessible to users`, async ({ browser }) => {
 
+     const { context, page, loginPage } = await LoginPage.createWithContext(browser);
+      
+    await loginPage.navigateToUrlAndPressEnter();
+     await loginPage.ToggleChat.waitFor(); // wait till the element is visible in the UI- This increases the chances of accessing panel 1
 
-  test('Verify that Panel 1: "An Intro to Cinco" is accessible and loads without errors.', async ({browser }) => {
-      const context= await browser.newContext({
-      permissions: ['geolocation'],
-      geolocation: { latitude: 45.5019, longitude: -73.5674 }, 
-      locale: 'en-CA'  });
-      const page= await context.newPage();  
-      await page.goto('https://qa-cinco.xspace.domains');
-      //await page.pause();
-     await page.locator("button").click(); // clicking on the 'ENTER' button.
-     await page.locator("div[aria-label= 'Toggle chat'] canvas").waitFor();
-     //clicking on Panel #1:
-      await page.evaluate(() => {
-        window.blazeIT_Susanoo.ctx.susanoo.on3DObjectClicked("panel_1")
-      });
-      await page.waitForTimeout(2000);
-      //Ensuring the panel's page is loaded: By ensuring the slides container is fully loaded & visible on the screen
-      await page.locator("div[data-testid='slides-container']").waitFor();
-      await page.close();  });
-    
+     await loginPage.ClickOn3DPanelNumber(data.panelnumb);
+     await expect(loginPage.panelSlidesContainer, "Expecting " + data.panelnumb +" page to be reachable (When user clicks on it in the carousel ").toBeAttached(); // what if clicking dooes not take user inside the panel ? In this case, the elemnt will still be attached to the DOM
+     //Include 200 ok and expected pagetitle
+     //console.log(await page.title());     
+     // Verifying the title of each page:
+     const pageTextBox= page.locator("span[class*= 'StyledTypography']").nth(2);
+     //waits for the box element to be visible. Playwright considers it so, when the text it's supposed to host becomes visible on the screen !
+     await expect(pageTextBox).toHaveText(panelNames[data.index]); //Auto-retrying assertion  
+     //                   span[class*= 'StyledTypography']
 
-      test('Verify that Panel 2: "Cinco’s XM Solutions" is accessible and loads without errors.', async ({browser }) => {
-        const context= await browser.newContext({
-        permissions: ['geolocation'],
-        geolocation: { latitude: 45.5019, longitude: -73.5674 }, 
-        locale: 'en-CA'  });
-        const page= await context.newPage();  
-        await page.goto('https://qa-cinco.xspace.domains');
-        //await page.pause();
-       await page.locator("button").click(); // clicking on the 'ENTER' button.
-       await page.locator("div[aria-label= 'Toggle chat'] canvas").waitFor();
-       //clicking on Panel #2:
-        await page.evaluate(() => {
-          window.blazeIT_Susanoo.ctx.susanoo.on3DObjectClicked("panel_2")
-        });
-        await page.waitForTimeout(2000);
-        //Ensuring the panel's page is loaded: By ensuring the slides container is fully loaded & visible on the screen
-        await page.locator("div[data-testid='slides-container']").waitFor();
-        await page.close();
-      });
+     //await page.close();
+      
+    });}// for-loop encapsulation;
 
+    //// Note: above- index values are included here simply becasue the Java code of: int count=0;  count++; is not applicable in JavaScript (Document it !).
+  
+     //////////////////////////Stop here and implement a dataprovider equivalent method that runs the same test case x number of times
+        // depending on the number (x) of data sets, one provides !/////////////////////////////////////////////////////////////////////
+        // //////////////////////////////////  
+        /*
+      test.skip('Verify that Panel 2: "Cinco’s XM Solutions" is accessible and loads without errors.', async ({browser }) => {
         
-      test('Verify that Panel 3: "Cinco’s AI Experience.', async ({browser }) => {
+     const { context, page, loginPage } = await LoginPage.createWithContext(browser);
+     await loginPage.navigateToUrlAndPressEnter();
+     await loginPage.ToggleChat.waitFor(); // wait till the element is visible in the UI- This increases the chances of accessing panel 1
+
+     const panelnumb= "panel_2"
+     await loginPage.ClickOn3DPanelNumber(panelnumb);
+    //Ensuring the panel's page is loaded: By ensuring the slides container is  visible on the screen
+     await expect(loginPage.panelSlidesContainer).toBeVisible(); //not sure about the behavious (1 image not displayed = false, all = false, plus..)
+     //await loginPage.panelSlidesContainer.waitFor(); // old line replaced by the one above.
+     await page.close(); 
+     });
+    
+        
+      test.skip('Verify that Panel 3: "Cinco’s AI Experience.', async ({browser }) => {
+  
         const context= await browser.newContext({
         permissions: ['geolocation'],
         geolocation: { latitude: 45.5019, longitude: -73.5674 }, 
@@ -107,10 +158,11 @@ await page.close(); });
         await page.waitForTimeout(2000);
         //Ensuring the panel's page is loaded: By ensuring the slides container is fully loaded & visible on the screen
         await page.locator("div[data-testid='slides-container']").waitFor();
-        await page.close();
+       await page.close();
       });
 
-      test('Verify that Panel 4:"How we work.', async ({browser }) => {
+      test.skip('Verify that Panel 4:"How we work.', async ({browser }) => {
+       
         const context= await browser.newContext({
         permissions: ['geolocation'],
         geolocation: { latitude: 45.5019, longitude: -73.5674 }, 
@@ -130,7 +182,9 @@ await page.close(); });
         await page.close();
       });
 
-      test('Verify that Panel 5: Lets Connect.', async ({browser }) => {
+      test.skip('Verify that Panel 5: Lets Connect.', async ({browser }) => {
+        
+
         const context= await browser.newContext({
         permissions: ['geolocation'],
         geolocation: { latitude: 45.5019, longitude: -73.5674 }, 
@@ -150,7 +204,8 @@ await page.close(); });
         await page.close();
       });
 
-      test('Verify that Panel 6: CASE STUDIES.', async ({browser }) => {
+      test.skip('Verify that Panel 6: CASE STUDIES.', async ({browser }) => {
+       
         const context= await browser.newContext({
         permissions: ['geolocation'],
         geolocation: { latitude: 45.5019, longitude: -73.5674 }, 
@@ -169,11 +224,12 @@ await page.close(); });
         await page.locator("div[class*= ModalHeaderContent]").waitFor();// since Playwright did not provide auto-wait for: .contentText()
         const formTitle= await page.locator("div[class*= ModalHeaderContent]").textContent();
         //console.log(formTitle);
-        expect (formTitle).toBeNull();   // I want to fail this test case
+        expect (formTitle).not.toBeNull();   // I want to fail this test case
         await page.close();
       });
 
-      test('Text entered in the field of [Start Typing] ', async ({browser }) => {
+      test.skip('Text entered in the field of [Start Typing] ', async ({browser }) => {
+       
         const context= await browser.newContext({
         permissions: ['geolocation'],
         geolocation: { latitude: 45.5019, longitude: -73.5674 }, 
@@ -192,6 +248,7 @@ await page.close(); });
         await page.locator("div[class*= ModalHeaderContent]").waitFor();// since Playwright did not provide auto-wait for: .contentText()
         const formTitle= await page.locator("div[class*= ModalHeaderContent]").textContent();
         //console.log(formTitle);
-        expect (formTitle).toBeNull(); // I want to fail this testcase.
+        expect (formTitle).not.toBeNull(); // I want to fail this testcase.
         await page.close();
       });
+      */

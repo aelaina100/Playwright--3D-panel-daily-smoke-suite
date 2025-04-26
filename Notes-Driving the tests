@@ -1,0 +1,72 @@
+
+CRUCIAL: Configuring [package.json] is a pre-requisite for Jenkins CI/CD pipeline integration.
+         This is illustrated below:
+
+
+
+Basically, the execution of the Playwright scripts is driven from "playwright.config.js".
+Nevertheless, one can drive the execution of their scripts from "package.json"  as well.
+before proceeding into that, the content of "package.json" resembles, more or less, the following:
+
+""    //Note: this is the original [package.json]  before configuring it in the way illustrated below:
+              If you encounter any issue, revert back to it !
+{
+  "name": "cinco",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {   
+    "test": "playwright test",
+    "posttest": "node send-to-slack.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.14.0",
+    "allure": "^0.0.0",
+    "allure-commandline": "^2.34.0",
+    "allure-playwright": "^3.2.1",
+    "playwright-slack-report": "^1.1.89"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "nodemailer": "^6.10.1",
+    "playwright": "^1.52.0"
+  }
+}
+""
+
+ Notice that, Inside "package.json", there is the a "scripts" block. This is where you can add
+ all of you custom scripts. To illustrate:
+ As shown above, I have:
+
+ 
+   "scripts": {   
+    "test": "playwright test",
+    "posttest": "node send-to-slack.js"
+  },
+
+ ********* Now, let me make a few changes, so that I now have:
+
+
+    "scripts": { 
+    "All": "npx playwright test"  
+    "smoke": "npx playwright test --grep @Smoke",
+    "regression": "npx playwright test --grep @Regression",
+    "API": "npx playwright test --grep @API",
+
+    "regressionChromeOnly": npx playwright test --project="Chrome execution"
+    "regressionIphone12Webkit": npx playwright test --config=playwright.config1 //Under 'use' not 'project'
+   
+    "posttest": "node send-to-slack.js",
+  },
+ 
+  Th console command is: npm run + Script name (Example-  npm run All)
+  The purpose behind this is- instead of giving the command of 'npx playwright test --grep @Smoke' 
+  everytime I want to run my smoke tests, I would simply instead type out "smoke" voila !
+
+  PLUS, All of this is a PRE-REQUISITE for Jenkins CI/CD pipeline integration.
+
+

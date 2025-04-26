@@ -1,0 +1,35 @@
+Generate allure reporting !- 2 steps:
+
+Prerequisite: npm i -D allure   to downlaod & import allure jars (Allure code)
+
+Step#1:
+npx playwright test --reporter='line,allure-playwright'           // if you do NOT specify the type of reporting you want to generate for this run (ALLURE vs Plain PlayWright reporting), then playwright
+                                                                          //  will default to the plain by-default Playwright reporter specified in the config file (reporter: 'html' //assuming it's set to 'html;)
+
+//Question:  in above, what does [--reporter=line,allure-playwright ] denote ? 
+ //Answer:  line (Just as there is HTML) is plain text format (How many passed vs failed).. that you're inputting into the allure reporting template for the automation tool that is 'Playwright' !                                                                     
+
+step#2: npm install allure-commandline --save-dev (one-time use !)
+
+Step#3:    
+
+ npx allure generate ./allure-generate --clean (cleans the previous reports so you don't get the old ones and generates the new fresh report from the new fresh files)     //generate report from the "Allure-results" folder.
+
+Explanation: Now, when you run the command above [npx playwright test --reporter='line,allure-playwright' ] & after the test execution is over, what's generated is: A folder, at the project level, with the title of "Allure-results". 
+So we need to open the HTML report from this folder (Allure-results) by providing command of step#2 (As the generated files under the allure-report are unreadable json ones-so the 'generate' keyword takes care of making it readable 
+by creating a nice HTML report for you !)
+
+step#4: Open this ready-for-viewing report:  npx allure open ./allure-report
+________________________________________________________________________________________________________
+Sample commands used in Playwright: (Double check, modify, or add more commands):
+
+npx playwright test 
+npx playwright test tests/Logging.spec.js 
+npx playwright test  --project="Chrome execution"   //using default config file that was generated immediately after the project was created.
+npx playwright test --config=playwright.config1.js --project="Chrome execution"
+npx playwright test --config=playwright.config1.js --project="Safari execution"
+
+npx playwright test && node send-to-slack.js 
+
+executing by tag:
+npx playwright test --grep@smoke

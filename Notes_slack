@@ -1,0 +1,53 @@
+First and foremost:
+/*
+npm install --save-dev rimraf
+*/
+so that, in package.json: yoiu could have
+ "clean-test-results": "rimraf test-results.json",     //rimraf deletes the content of the folder so only fresh results are outputted to slack.
+ "test": "npm run clean-test-results && npx playwright test --reporter=json > test-results.json",
+ "posttest": "node send-to-slack.js" // this line is seperate: basically concates this command to the end of each script name in: npm (space)+ run+ scriptName
+*/
+
+//Now update what's below:
+How to publish to Slack:
+
+WARNING !!!: Even though, this popular page provides instructions on PlayWright integration with Slack
+             that is indeed feasible when utilizing, at least, the options of:
+              
+             Option A - send your results via a Slack webhook
+             Option B - send your results via a Slack bot user
+            
+             Nevertheless, these configurations do not provide a viable mechanism for displaying the titles
+             of PlayWright tests (Passed, failed, etc.) in Slack despite the claims (This requires deeper research and reporting !)
+             [https://www.npmjs.com/package/playwright-slack-report].
+
+As an alternative: This version of the framework includes the workaround for resolving this issue:
+A new file has been added "send-to-slack.js" with changes to "package.json" along with the indsipensible slack reporter in
+PlayWright configuration file & adding the required dependecies. 
+Important, even though this info comes from the query result of asking DeepSeek "How send Playwright tests reports to slack where the title of each testcase is displayed in Stack", still I had to tweak the answer in order to make the integration work !
+
+Additional info: 
+
+https://api.slack.com/
+
+Example of a WebHook associated with CINCO_AI slack channel: https://hooks.slack.com/services/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
+and another WebHook associated with my OWN Slack channel : https://hooks.slack.com/services/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
+Both of these links are, as of now, on: https://api.slack.com/apps/A08PHLVS5DF/incoming-webhooks?success=1
+
+The command to run the tests ALONG with publishing a SLACK report is: npx playwright test && node send-to-slack.js 
+
+// At the end of the execution, if the console displays the msg " Report is sent to Slack", but non is sent then you
+// have to troubleshoot the WebHook URL on the slack api page (Last link provided above)
+// and include it again in "send-to-slack.js" as
+// const SLACK_WEBHOOK = 'https://hooks.slack.com/services/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';
+
+
+// why is this also working ?:  npm testyynpx playwright test && node send-to-slack.js
+
+Note: SUCCESS: you just need to include the specific channel hook for the slack API website & include it in send-to-slack.js !!
+
+2) Using chat bot: Not configured
+
+
+3) Using GitHub Actions: Will be configured
+                     

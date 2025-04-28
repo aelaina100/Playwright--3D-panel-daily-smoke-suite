@@ -1,0 +1,480 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\AE\\Cinco\\playwright.config.js",
+    "rootDir": "C:/Users/AE/Cinco/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/AE/Cinco/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome execution",
+        "name": "Chrome execution",
+        "testDir": "C:/Users/AE/Cinco/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 33000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "Logging.spec.js",
+      "file": "Logging.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@Smoke Verify the URL loads the expected Cinco URL successfully",
+          "ok": false,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 17304,
+                  "error": {
+                    "message": "Error: Expecting page title to be:  Cinco AI Experience R3gg\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mg\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be:  Cinco AI Experience R3gg with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n",
+                    "stack": "Error: Expecting page title to be:  Cinco AI Experience R3gg\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mg\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be:  Cinco AI Experience R3gg with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n\n    at C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js:16:75",
+                    "location": {
+                      "file": "C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js",
+                      "column": 75,
+                      "line": 16
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 14 |\u001b[39m   \u001b[36mconst\u001b[39m expectedPageTitle\u001b[33m=\u001b[39m \u001b[32m\"Cinco AI Experience R3gg\"\u001b[39m\u001b[33m;\u001b[39m   \u001b[90m//XSPACE R3a  //Cinco AI Experience R3g\u001b[39m\n \u001b[90m 15 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(urldataset\u001b[33m.\u001b[39m\u001b[33mURL\u001b[39m)\u001b[33m;\u001b[39m  \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m\"Expecting page title to be:  \"\u001b[39m \u001b[33m+\u001b[39m expectedPageTitle)\u001b[33m.\u001b[39mtoHaveTitle(expectedPageTitle)\u001b[33m;\u001b[39m  \u001b[90m//Auto-retrying assertion\u001b[39m\n \u001b[90m    |\u001b[39m                                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m\"Checking for unexpected re-direct from the current URL \"\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL(urldataset\u001b[33m.\u001b[39m\u001b[33mURL\u001b[39m \u001b[33m+\u001b[39m \u001b[32m\"/intro\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m \n \u001b[90m 19 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js",
+                        "column": 75,
+                        "line": 16
+                      },
+                      "message": "Error: Expecting page title to be:  Cinco AI Experience R3gg\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mg\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be:  Cinco AI Experience R3gg with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n\n\n  14 |   const expectedPageTitle= \"Cinco AI Experience R3gg\";   //XSPACE R3a  //Cinco AI Experience R3g\n  15 |   await page.goto(urldataset.URL);  \n> 16 |   await expect(page, \"Expecting page title to be:  \" + expectedPageTitle).toHaveTitle(expectedPageTitle);  //Auto-retrying assertion\n     |                                                                           ^\n  17 |   await expect(page, \"Checking for unexpected re-direct from the current URL \").toHaveURL(urldataset.URL + \"/intro\");\n  18 |   await page.close(); \n  19 | });\n    at C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js:16:75"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-28T23:11:07.472Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Verify-the--fff50-cted-Cinco-URL-successfully-Chrome-execution\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Verify-the--fff50-cted-Cinco-URL-successfully-Chrome-execution\\video.webm"
+                    },
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Verify-the--fff50-cted-Cinco-URL-successfully-Chrome-execution\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Verify-the--fff50-cted-Cinco-URL-successfully-Chrome-execution\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js",
+                    "column": 75,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f046be52a69b6f7df029-8cd9604982a84754bbf1",
+          "file": "Logging.spec.js",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "@Smoke Validating that [ENTER] button becomes visible",
+          "ok": false,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 577,
+                  "error": {
+                    "message": "Error: page.goto: url: expected string, got undefined",
+                    "stack": "Error: page.goto: url: expected string, got undefined\n    at C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js:26:14",
+                    "location": {
+                      "file": "C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js",
+                      "column": 14,
+                      "line": 26
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 24 |\u001b[39m   \u001b[36mconst\u001b[39m poManager\u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mPOManager\u001b[39m(page)\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   \u001b[36mconst\u001b[39m loginPage \u001b[33m=\u001b[39mpoManager\u001b[33m.\u001b[39mgetLoginPage()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(urldataset\u001b[33m.\u001b[39m\u001b[33mURLn\u001b[39m)\u001b[33m;\u001b[39m \n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"div[class*= 'EnterContainer'][style*= 'opacity: 1']\"\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m\"Expecting the ENTER button is visible to user\"\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m \u001b[90m// utilizing regular expressions for the value of the attribute.!\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m \n \u001b[90m 29 |\u001b[39m  })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js",
+                        "column": 14,
+                        "line": 26
+                      },
+                      "message": "Error: page.goto: url: expected string, got undefined\n\n  24 |   const poManager= new POManager(page);\n  25 |   const loginPage =poManager.getLoginPage();\n> 26 |   await page.goto(urldataset.URLn); \n     |              ^\n  27 |   await expect(page.locator(\"div[class*= 'EnterContainer'][style*= 'opacity: 1']\"), \"Expecting the ENTER button is visible to user\").toBeVisible(); // utilizing regular expressions for the value of the attribute.!\n  28 |   await page.close(); \n  29 |  });\n    at C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js:26:14"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-28T23:11:27.094Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Validating-that-ENTER-button-becomes-visible-Chrome-execution\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Validating-that-ENTER-button-becomes-visible-Chrome-execution\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Validating-that-ENTER-button-becomes-visible-Chrome-execution\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\AE\\Cinco\\tests\\Logging.spec.js",
+                    "column": 14,
+                    "line": 26
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f046be52a69b6f7df029-1c1b4323f86a69b5b85d",
+          "file": "Logging.spec.js",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "@Smoke Validate the 6-panel page is accessible to users after clicking on ENTER",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5449,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-28T23:11:29.128Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Validate-th-fcc30-ers-after-clicking-on-ENTER-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f046be52a69b6f7df029-b1ed7bc57c747c4f2972",
+          "file": "Logging.spec.js",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "@Smoke Verify that panel_1 [An Intro to Cinco] is accessible to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6559,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-28T23:11:36.036Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Verify-that-c26ef-inco-is-accessible-to-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f046be52a69b6f7df029-e070603a1bef1a60217e",
+          "file": "Logging.spec.js",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "@Smoke Verify that panel_2 [Cinco’s XM Solutions] is accessible to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6252,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-28T23:11:44.408Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Verify-that-80d46-ions-is-accessible-to-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f046be52a69b6f7df029-4cf7bae47cde68c41cfc",
+          "file": "Logging.spec.js",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "@Smoke Verify that panel_3 [Cinco AI Experience] is accessible to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6539,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-28T23:11:52.733Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Verify-that-8cd00-ence-is-accessible-to-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f046be52a69b6f7df029-473f70cf0d3829eb6ba5",
+          "file": "Logging.spec.js",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "@Smoke Verify that panel_4 [ How We Work] is accessible to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6416,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-28T23:12:01.613Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Verify-that-4f125-Work-is-accessible-to-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f046be52a69b6f7df029-76606047e3f32d6de106",
+          "file": "Logging.spec.js",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "@Smoke Verify that panel_5 [Case Studies] is accessible to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6281,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-28T23:12:10.712Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\Logging--Smoke-Verify-that-07b88-dies-is-accessible-to-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f046be52a69b6f7df029-8bcc9c703891f68fc363",
+          "file": "Logging.spec.js",
+          "line": 49,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-04-28T23:11:06.430Z",
+    "duration": 74006.044,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

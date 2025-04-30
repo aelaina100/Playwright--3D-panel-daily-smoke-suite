@@ -1,0 +1,81 @@
+Generate allure reporting ! (3rd party pluggin = Playwright independent)
+
+# The first part (1/2):
+Start here: https://www.npmjs.com/package/allure-playwright
+
+Prerequisite: npm i -D allure   to install Allure pluggin.
+
+
+- Install Allure Playwright: npm install -D allure-playwright
+then,
+- npx playwright test --reporter='line,allure-playwright'  (Ensure it generates 'allure-results' folder)
+and now, we need to generate an HTML report from the unreadable files generated under this folder ! (.json, .zip)
+_____________________________________________________________________________________________________________
+[[ Note:If you do not specify the type of reporting you want to generate for this run, then playwright will default to the plain by-default Playwright reporter specified in the config file as (reporter: 'html' //assuming it's set to 'html;) which is accessed via:
+
+playwright-report >Index.html>right-click on it > Copy path >paste into a webpage.
+
+//Question:  in above, what does [--reporter=line,allure-playwright ] denote ? 
+ //Answer:  'line' generates a report in plain text format (How many passed vs failed). Just as there is 'line' reporting, there is also 'HTML' reporting. This line reporting is inputted into the Allure template, resulting in "Allure reporting". ]]                                                             __________________________________________________________________________________________________________
+- npm install -g allure-commandline --save-dev (one-time use !)
+  
+- npx allure generate ./allure-results  --clean -o allure-report   (cleans the previous reports so you don't get the old ones & generates the new fresh report from the new fresh files). You should see the message of "Report successfully generated to allure-report"
+
+- npx allure open ./allure-report   //Open this ready-for-viewing report
+
+# The second part (2/2): You got to clear allure-results/ automatically before each test run (to not get stale reports)
+                          
+=========================
+Updates below: April 29th, 2025:
+The above commands will generate a Stale Allure report:
+
+The below commands is what you need 100! verified ! (compare above and below and re-write
+notes in this notes.text file)
+
+# Step 1: Delete old raw results and reports
+npx rimraf allure-results allure-report   // deletes both folders to ensure no stale reports shown in allure
+
+# Step 2: Run Playwright tests and generate fresh allure-results
+(npm run All) = npx playwright test --reporter=line,allure-playwright // IMPORTANT: It generates 'allure-results' folder (As currently configured in package.json).
+
+# Step 3: Generate a fresh HTML report from the new allure-results
+npx allure generate ./allure-results -o ./allure-report --clean      //'allure-report' folder is created
+
+# Step 4: Open the fresh Allure report in your browser
+npx allure open ./allure-report
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________________________
+Sample commands used in Playwright: (Double check, modify, or add more commands):
+
+npx playwright test 
+npx playwright test tests/Logging.spec.js 
+npx playwright test  --project="Chrome execution"   //using default config file that was generated immediately after the project was created.
+npx playwright test --config="playwright.config1.js" --project="Chrome execution"
+npx playwright test --config="playwright.config1.js" --project="Safari execution"
+
+npx playwright test && node send-to-slack.js 
+
+executing by tag:
+npx playwright test --grep@smoke

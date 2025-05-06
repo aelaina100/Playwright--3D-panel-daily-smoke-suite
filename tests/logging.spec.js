@@ -1,0 +1,166 @@
+const { test, expect, request } = require('@playwright/test'); 
+//test.describe.configure({ mode: 'parallel' }); // tests in here will run parallelly
+//test.describe.configure({ mode: 'serial' }); // tests in here will run serially where a test executes only when the one before it passes !(inter-dependency)                                        
+const {POManager} = require('../pageobjects/POManager');
+const { LoginPage }=require('../pageobjects/LoginPage'); 
+const { Console } = require('console');
+//Json ->String->js object
+const urldataset = JSON.parse(JSON.stringify(require("../utils/loggingTestDataUrl.json"))); // converting this json into a Javascript object so it is easier to access
+const panelNumbersdataset = JSON.parse(JSON.stringify(require("../utils/loggingTestDataPanelNum.json")));    
+//Urgent: Not only pages are accessible, but they should be the CORRECT pages
+
+
+test('@Smoke Verify the URL loads the expected Cinco URL successfully' , async ({ page }) => { 
+
+  const expectedPageTitle= "Cinco AI Experience R3g";   //XSPACE R3a  //Cinco AI Experience R3g
+  const expectedFinalUrl = "https://cinco.dev.xspace.domains/intro"; // hardcoded cuz in variable page url may set to = https://cinco.dev.xspace.domains (minus"/intro")
+   //Check that the page loads without any HTTP errors (status code 200 OK):
+  const response=   await page.goto(urldataset.URL);   // Still lauches the app in browser.
+  expect.soft(response.status(), "Expecting page loads without any HTTP errors (status code is 200 OK) ").toBe(200); 
+  //Checking the title of the page:
+  await expect.soft(page, "Expecting page title to be: " + expectedPageTitle).toHaveTitle(expectedPageTitle);  //Auto-retrying assertion
+  // Checking the page isn't re-directed to some unexpected webpage:
+  expect.soft(page.url(),"Verify that the page stays on the expected URL without any unexpected redirects").toBe(expectedFinalUrl);
+ await page.close(); 
+});                         
+
+
+
+//I believe it is only good for regression=add another TC to validate that logo is present ? (Reasoning: 1-UI load confirmation 2-Critical branding: public-facing apps 3-https://cinco.dev.xspace.domains/intro)
+test('@Smoke Validating that [ENTER] button becomes visible', async ({ page }) => {
+  const poManager= new POManager(page);
+  const loginPage =poManager.getLoginPage();
+  await page.goto(urldataset.URL); 
+  await expect(loginPage.enterButton, "Expecting the ENTER button is visible to user").toBeVisible(); // utilizing regular expressions for the value of the attribute.!
+  await page.close(); 
+ });
+
+
+test('@Smoke Validating the 6-panel page', async ({browser})=> { // the title could only be 'validate the 6-panel..""
+const { context, page, loginPage } = await LoginPage.createWithContext(browser);
+const Url_6PanelPage= "https://cinco.dev.xspace.domains";
+const PageTitle_6PanelPage= "Cinco AI Experience R3g";
+const welcome_text= "Welcome! Speak up to start a conversation, swipe up to text, or swipe down to hide.";
+
+await loginPage.navigateToUrlAndPressEnter(); 
+// 1- Checking the page is actually directed to the url of the 6-panel page.
+ await expect.soft(page,"Expecting the URL of the 6-panel page to be correct").toHaveURL(Url_6PanelPage); //Auto-retrying assertion.
+//2- checking the title of the page:
+await expect.soft(page, "Expecting page title to be: " + PageTitle_6PanelPage).toHaveTitle(PageTitle_6PanelPage);  //Auto-retrying assertion
+// 3-- that the 'Toggle Chat' button is visible.
+await expect.soft(loginPage.ToggleChat,"Expecting the Toggle Chat button to be visible to users").toBeVisible(); // to know page is not brocken.
+// verify that the welcome text is displayed on the 6-panel page
+await expect.soft(page.locator("span[class*='ResponseText']"), "Verify welcome text is displayed when user lands on the 6-panel page").toContainText(welcome_text); // look at the examples for expect..tobeVisible
+// Verify that the CINCO logo is visible !
+await expect.soft(page.locator("img[alt='Cinco']"), "Verify CINCO logo is visible to user").toBeVisible();
+//Verify that the 'Start typing' edit box is editable (allows user input)
+await expect.soft(page.locator("input[name='message']"), "Expecting user can type in the edit box ").toBeEditable(); // Verify that the 'Start typing' edit box is editable (allows user input)
+// Verify the submit button is enabled:
+
+//Verify that 'BOOK A MEETING' button: 1- Has the text displayed(button could be there but not its text !) 2- Has the button enabled (clickable).
+await expect(page.getByRole("button", {name: 'BOOK A MEETING'}).nth(0), "Expecting [BOOK A MEETING] button text to be visible to user").toContainText("Book a meeting"); // verified !
+await expect(page.getByRole("button", {name: 'BOOK A MEETING'}).nth(0), "Expecting [BOOK A MEETING] button to be enabled(clickable)").toBeEnabled(); // verified !
+//await page.getByRole("button", {name: 'BOOK A MEETING'}).nth(0).click(); // and this is the evidence ! (Has to be commented out)
+//Verify the burger menu is enabled(clickable):
+await expect(page.locator("button[data-testid='open-menu-button']","Expecting the buger menu to be enabled (clickable)" )).toBeEnabled();
+await page.close(); 
+}); 
+
+                                                                                            
+     const panelNames = [   // try me 
+      "An Intro to Cinco",
+      "Cinco’s XM Solutions",
+      "Cinco AI Experience",
+      " How We Work",
+      "Case Studies"
+    ];
+    for(const data of panelNumbersdataset){
+      test(`@Smoke Verify that ${data.panelnumb} [${panelNames[data.index]}] is accessible to users`, async ({ browser }) => {
+    
+         const { context, page, loginPage } = await LoginPage.createWithContext(browser);
+          
+         await loginPage.navigateToUrlAndPressEnter();
+         //Landing on the 6-panel page
+        await expect.soft(loginPage.ToggleChat,"Expecting the Toggle Chat button to be visible to users").toBeVisible(); // to know page is not brocken.
+        // Clicking on panel # 
+        await loginPage.ClickOn3DPanelNumber(data.panelnumb);
+        //Validating the panel # in the following ways:
+          //Validating the title of the sub- topic:
+          await expect(page.getByText(panelNames[data.index]),
+          "Expecting the panel: ["+ panelNames[data.index] + "] to have accessible sub topic page with the visible title of: [" + panelNames[data.index] + "]").toBeVisible();
+          await page.close(); 
+
+        });}
+        
+     test('@smoke Validating the [LET US CONNECT] panel', async ({ browser }) => {
+
+      const { context, page, loginPage } = await LoginPage.createWithContext(browser);
+      await loginPage.navigateToUrlAndPressEnter();
+      //Landing on the 6-panel page
+     await expect.soft(loginPage.ToggleChat,"Expecting the Toggle Chat button to be visible to users").toBeVisible(); // to know page is not brocken.
+     //Clicking on the panel 'LET'S CONNECT'
+     await page.evaluate(() => {
+      window.blazeIT_Susanoo.ctx.susanoo.on3DObjectClicked("panel_6");   });
+  
+     await page.waitForTimeout(2000); // to view in slow mode. remove it !
+     
+     // Validating in [LET'S CONNECT] pannel in the following ways:
+      //Validating the title of the form 'BOOK A MEETING' is visible to user
+      await expect(page.getByText("Book a meeting").nth(1),"Expecting the title of the form [BOOK A MEETING] to be displayed on the web page" ).toBeVisible();
+      //Verify that the 'First, Last Name' edit box is editable (allows user input)
+      await expect.soft(page.locator("input[name= 'name']"), "Expecting user can type in the 'First/Last Name' field").toBeEditable(); // Verify that the 'Start typing' edit box is editable (allows user input)
+      // verify that the 'Email' field is editable
+      await expect.soft(page.locator("input[name= 'email']"), "Expecting user can type in the 'Email' field").toBeEditable();
+      // verify that the 'Message' field is editable
+      await expect.soft(page.locator("input[name= 'message']"), "Expecting user can type in the 'Message' field").toBeEditable();
+      //Verify the form 'SUBMIT' button is enabled(clickable):
+      await expect(page.locator("button[data-testid= 'submit-button']","Expecting the buger menu to be enabled (clickable)" )).toBeEnabled();
+      await page.waitForTimeout(2000); 
+      await page.close(); 
+      });
+ 
+/* 
+For clarity:
+Level 1 with the panels = Topic
+Level 2 = Sub-Topic
+Level 3 = Feed
+Level 4 = Feed Item (ex.: video, single image or carrousel)
+*/
+  //Below- test cases to feed pages are accessible to user
+  
+     test('EXPERIMENT- @smoke Validating the feed pages of [AN INTRO TO CINCO] are accessible to users', async ({ browser }) => {
+     
+      const { context, page, loginPage } = await LoginPage.createWithContext(browser);
+      await loginPage.LaunchURLAndClickOn3DPanel("panel_1"); // this is the new method to be used.
+      await page.locator("span[class*= 'Title']").nth(0).click(); // click on the first sub-topic
+      await page.waitForTimeout(2000); // to view in slow mode. remove it !
+     // Validating the feed page in the following ways:
+      //Validating the title of the feed page is visible to user
+      const title_feedPage1_panel1= "20+ Years of Brand Experiences";
+      const container_feedPage1_panel1= page.locator("div[class*= 'BrandingContainer']");
+      await expect(container_feedPage1_panel1, "Expecting the title of the feed page to be present in the HTML mark-up").toContainText(title_feedPage1_panel1); 
+      await expect(container_feedPage1_panel1, "Expecting the title of the feed page to be visible to users on the web page").toBeVisible();
+      // Navigate back to the sub-topic page, in order to click on the 2nd sub-topic page:
+      await page.goBack();
+  
+      await page.locator("span[class*= 'Title']").nth(1).click(); // click on the second sub-topic.
+      const title_feedPage2_panel1= "Why Choose Cinco"
+      const container_feedPage2_panel1= page.locator("div[class*= 'BrandingContainer']");
+      await expect(container_feedPage2_panel1, "Expecting the title of the feed page to be present in the HTML mark-up").toContainText( title_feedPage2_panel1); 
+      await expect(container_feedPage2_panel1, "Expecting the title of the feed page to be visible to users on the web page").toBeVisible();
+      await page.waitForTimeout(2000);
+       // Navigate back to the sub-topic page, in order to click on the 2nd sub-topic page:
+       await page.goBack();
+  
+       await page.locator("span[class*= 'Title']").nth(2).click(); // click on the third sub-topic.
+       const title_feedPage3_panel1= "What Makes Us Different"
+       const container_feedPage3_panel1= page.locator("div[class*= 'BrandingContainer']");
+       await expect(container_feedPage3_panel1, "Expecting the title of the feed page to be present in the HTML mark-up").toContainText( title_feedPage3_panel1); 
+       await expect(container_feedPage3_panel1, "Expecting the title of the feed page to be visible to users on the web page").toBeVisible();
+       await page.waitForTimeout(2000);
+    });
+  
+
+  
+  
+  

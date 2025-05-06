@@ -1,0 +1,617 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\AE\\Cinco\\playwright.config.js",
+    "rootDir": "C:/Users/AE/Cinco/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/AE/Cinco/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome execution",
+        "name": "Chrome execution",
+        "testDir": "C:/Users/AE/Cinco/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 33000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "logging.spec.js",
+      "file": "logging.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@Smoke Verify that the expected Cinco URL loads successfully",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2701,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:52:35.809Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-42892-inco-URL-loads-successfully-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-06788c3b03ded6b8b466",
+          "file": "logging.spec.js",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "@Smoke Verify that the [ENTER] button becomes visible",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4781,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:52:38.910Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-the-ENTER-button-becomes-visible-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-951261e2fb1b8418232b",
+          "file": "logging.spec.js",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "@Smoke Verify that the 6-panel page loads correctly",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4942,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:52:44.250Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-the-6-panel-page-loads-correctly-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-fb6a0976c09692341bf3",
+          "file": "logging.spec.js",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "@Smoke Verify that panel_1 [An Intro to Cinco] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6745,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:52:50.416Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-453dd-d-loads-correctly-for-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-b600f61e6081904fc674",
+          "file": "logging.spec.js",
+          "line": 78,
+          "column": 7
+        },
+        {
+          "title": "@Smoke Verify that panel_2 [Cinco’s XM Solutions] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6878,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:52:59.015Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-d3cfd-d-loads-correctly-for-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-940530f0cc9d209119cb",
+          "file": "logging.spec.js",
+          "line": 78,
+          "column": 7
+        },
+        {
+          "title": "@Smoke Verify that panel_3 [Cinco AI Experience] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6768,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:53:08.024Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-210a7-d-loads-correctly-for-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-8941d7d62d7cc969afc9",
+          "file": "logging.spec.js",
+          "line": 78,
+          "column": 7
+        },
+        {
+          "title": "@Smoke Verify that panel_4 [ How We Work] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6480,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:53:17.055Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-4a32a-d-loads-correctly-for-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-0c2aa10b32c1e92f479c",
+          "file": "logging.spec.js",
+          "line": 78,
+          "column": 7
+        },
+        {
+          "title": "@Smoke Verify that panel_5 [Case Studies] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6744,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:53:26.054Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-559eb-d-loads-correctly-for-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-9f9c16d531c4c9a38bc0",
+          "file": "logging.spec.js",
+          "line": 78,
+          "column": 7
+        },
+        {
+          "title": "@Smoke Verify that the \"LET US CONNECT\" panel is visible and fully loaded",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8605,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:53:35.879Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-5dc4b-is-visible-and-fully-loaded-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-b40b6fdaeda97a8c3baa",
+          "file": "logging.spec.js",
+          "line": 95,
+          "column": 6
+        },
+        {
+          "title": "@Smoke Verify the accessibility of the feed pages for [AN INTRO TO CINCO] to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14521,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:53:47.421Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-the--46e29--AN-INTRO-TO-CINCO-to-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-19cdcc0952748dfeb25e",
+          "file": "logging.spec.js",
+          "line": 131,
+          "column": 6
+        },
+        {
+          "title": "@Smoke Verify the accessibility of the feed pages for [Cinco’s XM Solutions] for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12045,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:54:08.558Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-the--c4ab7-co’s-XM-Solutions-for-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-f155648c75363ea13220",
+          "file": "logging.spec.js",
+          "line": 165,
+          "column": 5
+        },
+        {
+          "title": "@Smoke Verify the accessibility of the feed pages for [Cinco AI Experience] to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14098,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:54:27.951Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-the--5f36e-inco-AI-Experience-to-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-8883c4378089c6004af4",
+          "file": "logging.spec.js",
+          "line": 199,
+          "column": 5
+        },
+        {
+          "title": "@Smoke Verify the accessibility of the feed pages for [How We Work] to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7365,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-06T20:54:51.054Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-the--6636b-es-for-How-We-Work-to-users-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-6c3ab7aeae6cfe412902",
+          "file": "logging.spec.js",
+          "line": 242,
+          "column": 8
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-05-06T20:52:34.776Z",
+    "duration": 153018.493,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

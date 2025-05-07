@@ -1,0 +1,295 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\AE\\Cinco\\playwright.config.js",
+    "rootDir": "C:/Users/AE/Cinco/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/AE/Cinco/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome execution",
+        "name": "Chrome execution",
+        "testDir": "C:/Users/AE/Cinco/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 33000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "smoke.spec.js",
+      "file": "smoke.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@Smoke Verify that the expected Cinco URL loads successfully",
+          "ok": false,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 17491,
+                  "error": {
+                    "message": "Error: Expecting page title to be: Cinco AI Experience R3gX\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mX\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be: Cinco AI Experience R3gX with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n",
+                    "stack": "Error: Expecting page title to be: Cinco AI Experience R3gX\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mX\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be: Cinco AI Experience R3gX with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n\n    at C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js:27:79",
+                    "location": {
+                      "file": "C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js",
+                      "column": 79,
+                      "line": 27
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 25 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m\"Expecting page loads without any HTTP errors (status code is 200 OK) \"\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m   \u001b[90m//Checking the title of the page:\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m,\u001b[39m \u001b[32m\"Expecting page title to be: \"\u001b[39m \u001b[33m+\u001b[39m expectedPageTitle)\u001b[33m.\u001b[39mtoHaveTitle(expectedPageTitle)\u001b[33m;\u001b[39m  \u001b[90m//Auto-retrying assertion\u001b[39m\n \u001b[90m    |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[90m// Checking the page isn't re-directed to some unexpected webpage:\u001b[39m\n \u001b[90m 29 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m \u001b[32m\"Verify that the page stays on the expected URL without any unexpected redirects\"\u001b[39m)\u001b[33m.\u001b[39mtoBe(expectedFinalUrl)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js",
+                        "column": 79,
+                        "line": 27
+                      },
+                      "message": "Error: Expecting page title to be: Cinco AI Experience R3gX\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mX\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be: Cinco AI Experience R3gX with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n\n\n  25 |   expect.soft(response.status(), \"Expecting page loads without any HTTP errors (status code is 200 OK) \").toBe(200);\n  26 |   //Checking the title of the page:\n> 27 |   await expect.soft(page, \"Expecting page title to be: \" + expectedPageTitle).toHaveTitle(expectedPageTitle);  //Auto-retrying assertion\n     |                                                                               ^\n  28 |   // Checking the page isn't re-directed to some unexpected webpage:\n  29 |   expect.soft(page.url(), \"Verify that the page stays on the expected URL without any unexpected redirects\").toBe(expectedFinalUrl);\n  30 |   await page.close();\n    at C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js:27:79"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-07T15:43:33.678Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-t-34706-inco-URL-loads-successfully-Chrome-execution\\video.webm"
+                    },
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-t-34706-inco-URL-loads-successfully-Chrome-execution\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-t-34706-inco-URL-loads-successfully-Chrome-execution\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js",
+                    "column": 79,
+                    "line": 27
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 17161,
+                  "error": {
+                    "message": "Error: Expecting page title to be: Cinco AI Experience R3gX\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mX\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be: Cinco AI Experience R3gX with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n",
+                    "stack": "Error: Expecting page title to be: Cinco AI Experience R3gX\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mX\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be: Cinco AI Experience R3gX with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n\n    at C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js:27:79",
+                    "location": {
+                      "file": "C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js",
+                      "column": 79,
+                      "line": 27
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 25 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m\"Expecting page loads without any HTTP errors (status code is 200 OK) \"\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m   \u001b[90m//Checking the title of the page:\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m,\u001b[39m \u001b[32m\"Expecting page title to be: \"\u001b[39m \u001b[33m+\u001b[39m expectedPageTitle)\u001b[33m.\u001b[39mtoHaveTitle(expectedPageTitle)\u001b[33m;\u001b[39m  \u001b[90m//Auto-retrying assertion\u001b[39m\n \u001b[90m    |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[90m// Checking the page isn't re-directed to some unexpected webpage:\u001b[39m\n \u001b[90m 29 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m \u001b[32m\"Verify that the page stays on the expected URL without any unexpected redirects\"\u001b[39m)\u001b[33m.\u001b[39mtoBe(expectedFinalUrl)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js",
+                        "column": 79,
+                        "line": 27
+                      },
+                      "message": "Error: Expecting page title to be: Cinco AI Experience R3gX\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mX\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be: Cinco AI Experience R3gX with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n\n\n  25 |   expect.soft(response.status(), \"Expecting page loads without any HTTP errors (status code is 200 OK) \").toBe(200);\n  26 |   //Checking the title of the page:\n> 27 |   await expect.soft(page, \"Expecting page title to be: \" + expectedPageTitle).toHaveTitle(expectedPageTitle);  //Auto-retrying assertion\n     |                                                                               ^\n  28 |   // Checking the page isn't re-directed to some unexpected webpage:\n  29 |   expect.soft(page.url(), \"Verify that the page stays on the expected URL without any unexpected redirects\").toBe(expectedFinalUrl);\n  30 |   await page.close();\n    at C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js:27:79"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-05-07T15:43:53.732Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-t-34706-inco-URL-loads-successfully-Chrome-execution-retry1\\video.webm"
+                    },
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-t-34706-inco-URL-loads-successfully-Chrome-execution-retry1\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-t-34706-inco-URL-loads-successfully-Chrome-execution-retry1\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js",
+                    "column": 79,
+                    "line": 27
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 16953,
+                  "error": {
+                    "message": "Error: Expecting page title to be: Cinco AI Experience R3gX\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mX\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be: Cinco AI Experience R3gX with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n",
+                    "stack": "Error: Expecting page title to be: Cinco AI Experience R3gX\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mX\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be: Cinco AI Experience R3gX with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n\n    at C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js:27:79",
+                    "location": {
+                      "file": "C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js",
+                      "column": 79,
+                      "line": 27
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 25 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m\"Expecting page loads without any HTTP errors (status code is 200 OK) \"\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m   \u001b[90m//Checking the title of the page:\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m,\u001b[39m \u001b[32m\"Expecting page title to be: \"\u001b[39m \u001b[33m+\u001b[39m expectedPageTitle)\u001b[33m.\u001b[39mtoHaveTitle(expectedPageTitle)\u001b[33m;\u001b[39m  \u001b[90m//Auto-retrying assertion\u001b[39m\n \u001b[90m    |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[90m// Checking the page isn't re-directed to some unexpected webpage:\u001b[39m\n \u001b[90m 29 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m \u001b[32m\"Verify that the page stays on the expected URL without any unexpected redirects\"\u001b[39m)\u001b[33m.\u001b[39mtoBe(expectedFinalUrl)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js",
+                        "column": 79,
+                        "line": 27
+                      },
+                      "message": "Error: Expecting page title to be: Cinco AI Experience R3gX\n\n\u001b[31mTimed out 15000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"Cinco AI Experience R3g\u001b[7mX\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"Cinco AI Experience R3g\"\u001b[39m\nCall log:\n\u001b[2m  - Expecting page title to be: Cinco AI Experience R3gX with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    2 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m      - unexpected value \"\"\u001b[22m\n\u001b[2m    15 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"Cinco AI Experience R3g\"\u001b[22m\n\n\n  25 |   expect.soft(response.status(), \"Expecting page loads without any HTTP errors (status code is 200 OK) \").toBe(200);\n  26 |   //Checking the title of the page:\n> 27 |   await expect.soft(page, \"Expecting page title to be: \" + expectedPageTitle).toHaveTitle(expectedPageTitle);  //Auto-retrying assertion\n     |                                                                               ^\n  28 |   // Checking the page isn't re-directed to some unexpected webpage:\n  29 |   expect.soft(page.url(), \"Verify that the page stays on the expected URL without any unexpected redirects\").toBe(expectedFinalUrl);\n  30 |   await page.close();\n    at C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js:27:79"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2025-05-07T15:44:13.498Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-t-34706-inco-URL-loads-successfully-Chrome-execution-retry2\\video.webm"
+                    },
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-t-34706-inco-URL-loads-successfully-Chrome-execution-retry2\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-t-34706-inco-URL-loads-successfully-Chrome-execution-retry2\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\AE\\Cinco\\tests\\smoke.spec.js",
+                    "column": 79,
+                    "line": 27
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-1dc42c3c21ca9c2c5df7",
+          "file": "smoke.spec.js",
+          "line": 19,
+          "column": 6
+        },
+        {
+          "title": "@Smoke Verify that the [ENTER] button becomes visible",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5905,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-07T15:44:32.591Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\smoke--Smoke-Verify-that-the-ENTER-button-becomes-visible-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-8284e6d131c9999d2a6a",
+          "file": "smoke.spec.js",
+          "line": 34,
+          "column": 6
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-05-07T15:43:32.590Z",
+    "duration": 66945.969,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

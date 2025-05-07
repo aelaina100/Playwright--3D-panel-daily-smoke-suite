@@ -1,0 +1,113 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\AE\\Cinco\\playwright.config.js",
+    "rootDir": "C:/Users/AE/Cinco/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/AE/Cinco/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome execution",
+        "name": "Chrome execution",
+        "testDir": "C:/Users/AE/Cinco/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 33000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "logging.spec.js",
+      "file": "logging.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@Smoke Verify that the expected Cinco URL loads successfully",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3415,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-05-07T13:53:24.272Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\AE\\Cinco\\test-results\\logging--Smoke-Verify-that-42892-inco-URL-loads-successfully-Chrome-execution\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fae0a2d3ff3dfe0d56c4-06788c3b03ded6b8b466",
+          "file": "logging.spec.js",
+          "line": 13,
+          "column": 6
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-05-07T13:53:23.312Z",
+    "duration": 5050.8859999999995,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

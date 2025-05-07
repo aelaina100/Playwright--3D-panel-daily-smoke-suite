@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2790","@Smoke Verify that the expected Cinco URL loads successfully","Chrome execution","Wed May 07 09:54:18 EDT 2025","passed","Wed May 07 09:54:21 EDT 2025","","logging.spec.js","",""

@@ -1,0 +1,883 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\AE\\Cinco\\playwright.config.js",
+    "rootDir": "C:/Users/AE/Cinco/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/AE/Cinco/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome execution",
+        "name": "Chrome execution",
+        "testDir": "C:/Users/AE/Cinco/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 33000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "smoke.spec.js",
+      "file": "smoke.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "🚬@Smoke Validating the Entry screen of the cinco app",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2748,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Navigating to the application URL: https://cincoaiexperience.com/intro",
+                      "duration": 1056
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 328
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:50:28.288Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-e36e9ace591b3b043da4",
+          "file": "smoke.spec.js",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Verify that the enter app button becomes visible",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5272,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Navigating to the application URL: https://cincoaiexperience.com/intro",
+                      "duration": 888
+                    },
+                    {
+                      "title": "Accepting the cookie banner",
+                      "duration": 1196
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 23
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:50:31.553Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-fb6c53a288ad14f1dcf9",
+          "file": "smoke.spec.js",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Validating the 6-panel page",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6269,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 129
+                    },
+                    {
+                      "title": "Navigating to the application URL: [https://cincoaiexperience.com/intro] and accessing the 6-panel application interface",
+                      "duration": 5619,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 963
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 3334
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Verify that the welcome text is displayed on the 6-panel page",
+                      "duration": 16
+                    },
+                    {
+                      "title": "Verify: [BOOK A MEETING] button is visible to user",
+                      "duration": 14
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 13
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:50:36.834Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-6b9af89d3fd33e5444ed",
+          "file": "smoke.spec.js",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_1 [An Intro to Cinco] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6817,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 155
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 4190,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 940
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 2044
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [An Intro to Cinco] 3D panel",
+                      "duration": 2050
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 20
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:50:43.109Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-7f16cb2db054679a1a35",
+          "file": "smoke.spec.js",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_2 [Cinco’s XM Solutions] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7970,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 148
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 5361,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 819
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 3299
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [Cinco’s XM Solutions] 3D panel",
+                      "duration": 2023
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 17
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:50:49.929Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-735e288766f69d3cfb85",
+          "file": "smoke.spec.js",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_3 [Cinco AI Experience] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7411,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 149
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 4836,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 1720
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 2013
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [Cinco AI Experience] 3D panel",
+                      "duration": 2021
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 19
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:50:57.904Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-ce499d94d833e9f21822",
+          "file": "smoke.spec.js",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_4 [ How We Work] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6822,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 138
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 4249,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 855
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 2204
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [ How We Work] 3D panel",
+                      "duration": 2015
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 18
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:51:05.319Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-246e2207f96f1b25ffda",
+          "file": "smoke.spec.js",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_5 [Case Studies] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6849,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 137
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 4252,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 828
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 2232
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [Case Studies] 3D panel",
+                      "duration": 2025
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 25
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:51:12.144Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-40d114d70a37813ac172",
+          "file": "smoke.spec.js",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that the \"LET US CONNECT\" panel is visible and fully loaded",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6486,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 148
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 3993,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 822
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 2009
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [LET'S CONNECT] 3D panel",
+                      "duration": 12
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 18
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:51:18.997Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-17717ddc5c9fa11663df",
+          "file": "smoke.spec.js",
+          "line": 132,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Feed Page Accessibility – [AN INTRO TO CINCO], loads successfully",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12778,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 141
+                    },
+                    {
+                      "title": "Accessing the sub-topic page of the [AN INTRO TO CINCO] panel",
+                      "duration": 8111
+                    },
+                    {
+                      "title": "Clicking on the first displayed sub-topic",
+                      "duration": 94
+                    },
+                    {
+                      "title": "Closing the feed page",
+                      "duration": 1102
+                    },
+                    {
+                      "title": "Clicking on the second displayed sub-topic",
+                      "duration": 88
+                    },
+                    {
+                      "title": "Closing the feed page",
+                      "duration": 1087
+                    },
+                    {
+                      "title": "Clicking on the third displayed sub-topic",
+                      "duration": 80
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 2033
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:51:25.487Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-f9c726aa87ff471e7363",
+          "file": "smoke.spec.js",
+          "line": 167,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Verify the accessibility of the feed pages for [Cinco’s XM Solutions] for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14082,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 144
+                    },
+                    {
+                      "title": "Accessing the sub-topic page of the [Cinco’s XM Solutions] panel",
+                      "duration": 7450
+                    },
+                    {
+                      "title": "Clicking on the first displayed sub-topic",
+                      "duration": 2092
+                    },
+                    {
+                      "title": "Closing the feed page",
+                      "duration": 1088
+                    },
+                    {
+                      "title": "Clicking on the second displayed sub-topic",
+                      "duration": 80
+                    },
+                    {
+                      "title": "Closing the feed page",
+                      "duration": 1094
+                    },
+                    {
+                      "title": "Clicking on the third displayed sub-topic",
+                      "duration": 73
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 2016
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:51:38.270Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-5c2c7faf1c9558be0b6d",
+          "file": "smoke.spec.js",
+          "line": 218,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Verify the accessibility of the feed pages for [Cinco AI Experience] to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13353,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 120
+                    },
+                    {
+                      "title": "Accessing the sub-topic page of the [AN INTRO TO CINCO] panel",
+                      "duration": 7515
+                    },
+                    {
+                      "title": "Clicking on the first displayed sub-topic",
+                      "duration": 82
+                    },
+                    {
+                      "title": "Closing the feed page",
+                      "duration": 1111
+                    },
+                    {
+                      "title": "Clicking on the second displayed sub-topic",
+                      "duration": 89
+                    },
+                    {
+                      "title": "Closing the feed page",
+                      "duration": 1086
+                    },
+                    {
+                      "title": "Clicking on the third displayed sub-topic",
+                      "duration": 90
+                    },
+                    {
+                      "title": "Closing the feed page",
+                      "duration": 1089
+                    },
+                    {
+                      "title": "Clicking on the fourth displayed sub-topic",
+                      "duration": 75
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 2022
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:51:52.356Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-9404c3f4c3b9f698e152",
+          "file": "smoke.spec.js",
+          "line": 275,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Verify the accessibility of the feed pages for [How We Work] to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 33000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8161,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 135
+                    },
+                    {
+                      "title": "Accessing the sub-topic page of the [HOW WE WORK] panel",
+                      "duration": 7994
+                    }
+                  ],
+                  "startTime": "2025-05-22T20:52:05.712Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-5bbe77d09ebfc5361dba",
+          "file": "smoke.spec.js",
+          "line": 343,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-05-22T20:50:27.215Z",
+    "duration": 107037.404,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

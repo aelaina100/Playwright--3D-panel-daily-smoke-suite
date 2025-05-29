@@ -1,0 +1,41 @@
+{
+  "name": "cinco",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "All": "npx playwright test",
+    "smoke": "npx playwright test --grep @Smoke",
+    "regression": "npx playwright test --grep @Regression",
+    "API": "npx playwright test --grep @API",
+    "regressionChromeOnly": "npx playwright test --project =Chrome execution",
+    "regressionIphone12Webkit": "npx playwright test --config=playwright.config1.js",
+    "clean-test-results-Slack": "rimraf test-results.json",
+    "sendToEmailAllure": "npx rimraf allure-results allure-report allure-report.zip gh-pages && (npx playwright test tests/smoke.spec.js --reporter=line,allure-playwright || echo Test run failed) && npx allure generate ./allure-results -o ./allure-report --clean && node uploadAndSendEmail.js",
+    
+    "testSlack": "npm run clean-test-results-Slack && (npx playwright test tests/smoke.spec.js --reporter=json > test-results.json || echo Test run failed) && node send-to-slack.js",
+    "WithAllureNoSlack": "npx rimraf allure-results allure-report && (npx playwright test tests/smoke.spec.js --reporter=line,allure-playwright || echo Test run failed) && npx allure generate ./allure-results -o ./allure-report --clean && npx allure open ./allure-report",
+    "_comment": "[posttest= && node send-to-slack.js] was another script title I removed because the echo line to show failed test won't concatenate it"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.14.0",
+    "allure-playwright": "^3.2.1",
+    "bestzip": "^2.2.1",
+    "npm-run-all": "^4.1.5",
+    "playwright-slack-report": "^1.1.89",
+    "rimraf": "^6.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "googleapis": "^148.0.0",
+    "module": "^1.1.0",
+    "nodemailer": "^7.0.3",
+    "open": "^10.1.2",
+    "playwright": "^1.52.0"
+  }
+}

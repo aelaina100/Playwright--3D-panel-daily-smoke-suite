@@ -1,0 +1,1151 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\AE\\Cinco\\playwright.config.js",
+    "rootDir": "C:/Users/AE/Cinco/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/AE/Cinco/test-results",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome execution",
+        "name": "Chrome execution",
+        "testDir": "C:/Users/AE/Cinco/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 40000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "smoke.spec.js",
+      "file": "smoke.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "🚬@Smoke Validating the Entry screen of the cinco app",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3247,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Navigating to the application URL: https://cinco.cincoaiexperience.com/intro",
+                      "duration": 1441
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 184
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:10:28.958Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-e36e9ace591b3b043da4",
+          "file": "smoke.spec.js",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Verify that the 'Enter' App button appears and is visible to the user.",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6011,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Navigating to the application URL: https://cinco.cincoaiexperience.com/intro",
+                      "duration": 862
+                    },
+                    {
+                      "title": "Accepting the cookie banner",
+                      "duration": 1494
+                    },
+                    {
+                      "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                      "duration": 8
+                    },
+                    {
+                      "title": "No \"Slow Network\" pop-up appeared",
+                      "duration": 0
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 16
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:10:32.558Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-e65a4992b3ada5209353",
+          "file": "smoke.spec.js",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Validating the 6-panel page",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5177,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 112
+                    },
+                    {
+                      "title": "Navigating to the application URL: [https://cinco.cincoaiexperience.com/intro] and accessing the 6-panel application interface",
+                      "duration": 4502,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 912
+                        },
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 11
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Trying to click on ENTER in order to access the 6-panel page",
+                          "duration": 2318
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Verify that the welcome text is displayed on the 6-panel page",
+                      "duration": 26
+                    },
+                    {
+                      "title": "Verify: [BOOK A MEETING] button is visible to user",
+                      "duration": 31
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 31
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:10:38.577Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-6b9af89d3fd33e5444ed",
+          "file": "smoke.spec.js",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_1 [An Intro to Cinco] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6894,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 164
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cinco.cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 4288,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 846
+                        },
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 14
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Trying to click on ENTER in order to access the 6-panel page",
+                          "duration": 2187
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [An Intro to Cinco] 3D panel",
+                      "duration": 2017
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 22
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:10:43.762Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-7f16cb2db054679a1a35",
+          "file": "smoke.spec.js",
+          "line": 115,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_2 [Cinco’s XM Solutions] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6925,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 137
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cinco.cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 4305,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 1007
+                        },
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 6
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Trying to click on ENTER in order to access the 6-panel page",
+                          "duration": 1989
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [Cinco’s XM Solutions] 3D panel",
+                      "duration": 2039
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 21
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:10:50.661Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-735e288766f69d3cfb85",
+          "file": "smoke.spec.js",
+          "line": 115,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_3 [Cinco AI Experience] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6866,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 143
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cinco.cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 4284,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 875
+                        },
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 5
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Trying to click on ENTER in order to access the 6-panel page",
+                          "duration": 2138
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [Cinco AI Experience] 3D panel",
+                      "duration": 2020
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 22
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:10:57.590Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-ce499d94d833e9f21822",
+          "file": "smoke.spec.js",
+          "line": 115,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_4 [ How We Work] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6460,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 151
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cinco.cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 3883,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 843
+                        },
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 18
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Trying to click on ENTER in order to access the 6-panel page",
+                          "duration": 2014
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [ How We Work] 3D panel",
+                      "duration": 2015
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 19
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:11:04.460Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-246e2207f96f1b25ffda",
+          "file": "smoke.spec.js",
+          "line": 115,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that panel_5 [Case Studies] is accessible and loads correctly for users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6899,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 151
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cinco.cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 4286,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 849
+                        },
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 4
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Trying to click on ENTER in order to access the 6-panel page",
+                          "duration": 2163
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [Case Studies] 3D panel",
+                      "duration": 2026
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 20
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:11:10.924Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-40d114d70a37813ac172",
+          "file": "smoke.spec.js",
+          "line": 115,
+          "column": 3
+        },
+        {
+          "title": "🚬@Smoke Verify that the \"LET US CONNECT\" panel is visible and fully loaded",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6716,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 192
+                    },
+                    {
+                      "title": "Navigating to the application URL: https://cinco.cincoaiexperience.com/intro and accessing the 6-panel application interface",
+                      "duration": 4127,
+                      "steps": [
+                        {
+                          "title": "Navigating to the URL",
+                          "duration": 855
+                        },
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 19
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Trying to click on ENTER in order to access the 6-panel page",
+                          "duration": 2008
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Clicking on [LET'S CONNECT] 3D panel",
+                      "duration": 14
+                    },
+                    {
+                      "title": "Validating: 'First/Last Name' field is both visible & editable (Allows user input)",
+                      "duration": 9
+                    },
+                    {
+                      "title": "Validating: Email field is both visible & editable (Allows user input)",
+                      "duration": 11
+                    },
+                    {
+                      "title": "Validating: Message field is both visible & editable (Allows user input)",
+                      "duration": 10
+                    },
+                    {
+                      "title": "Validating: The Submit button is noth visible & clickable",
+                      "duration": 18
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 16
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:11:17.827Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-17717ddc5c9fa11663df",
+          "file": "smoke.spec.js",
+          "line": 145,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Validating: [AN INTRO TO CINCO] feed page",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14635,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 143
+                    },
+                    {
+                      "title": "Trying to access the [AN INTRO TO CINCO] panel",
+                      "duration": 7643,
+                      "steps": [
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 7
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 2059
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Validating: The number of sub-topics displayed should be: 3",
+                      "duration": 9
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: 20+ Years of Brand Experiences",
+                      "duration": 2129
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 131
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Why Choose Cinco",
+                      "duration": 2112
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 134
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: What Makes Us Different",
+                      "duration": 2121
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 138
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 18
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:11:24.547Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-f1ceb127e1430de9f506",
+          "file": "smoke.spec.js",
+          "line": 197,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Validating: [Cinco’s XM Solutions] feed page",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14481,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 127
+                    },
+                    {
+                      "title": "Trying to access the [Cinco's XM Solutions] panel",
+                      "duration": 7525,
+                      "steps": [
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 8
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 1991
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Validating: The number of sub-topics displayed should be: 3",
+                      "duration": 6
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Brand Activations",
+                      "duration": 2108
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 132
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Strategic Sponsorships",
+                      "duration": 2107
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 146
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: XM Digital Services",
+                      "duration": 2110
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 149
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 19
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:11:39.185Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-dccb17a09303671552ce",
+          "file": "smoke.spec.js",
+          "line": 252,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Validating: [Cinco AI Experience] feed page",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16910,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 140
+                    },
+                    {
+                      "title": "Trying to access the [Cinco AI Experience] panel",
+                      "duration": 7675,
+                      "steps": [
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 22
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 2124
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Validating: The number of sub-topics displayed should be: 4",
+                      "duration": 9
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Platform Features",
+                      "duration": 2107
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 139
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Seamless Access",
+                      "duration": 2121
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 129
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Advanced Analytics",
+                      "duration": 2113
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 140
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Use Cases",
+                      "duration": 2116
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 141
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 19
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:11:53.669Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-8c16eee92876d6599918",
+          "file": "smoke.spec.js",
+          "line": 308,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Verify the accessibility of the feed pages for [How We Work] to users",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7432,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 156
+                    },
+                    {
+                      "title": "Accessing the sub-topic page of the [HOW WE WORK] panel",
+                      "duration": 7240,
+                      "steps": [
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 5
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 1992
+                        }
+                      ]
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:12:10.584Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-5bbe77d09ebfc5361dba",
+          "file": "smoke.spec.js",
+          "line": 365,
+          "column": 1
+        },
+        {
+          "title": "🚬@Smoke Validating: [Case Studies] feed page",
+          "ok": true,
+          "tags": [
+            "Smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome execution",
+              "projectName": "Chrome execution",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19226,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Setting up the test environment",
+                      "duration": 115
+                    },
+                    {
+                      "title": "Trying to access the [Cinco AI Experience] panel",
+                      "duration": 7669,
+                      "steps": [
+                        {
+                          "title": "Checking if the occasional \"Slow Network\" pop-up becomes visible",
+                          "duration": 3
+                        },
+                        {
+                          "title": "No \"Slow Network\" pop-up appeared",
+                          "duration": 0
+                        },
+                        {
+                          "title": "Clicking on ENTER",
+                          "duration": 2182
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Validating: The number of sub-topics displayed should be: 5",
+                      "duration": 8
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Automotive & Transportation",
+                      "duration": 2130
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 172
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Beauty, Fashion & Culture",
+                      "duration": 2109
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 117
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Retail & Consumer Goods",
+                      "duration": 2114
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 132
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Sports & Entertainment",
+                      "duration": 2110
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 153
+                    },
+                    {
+                      "title": "Clicking on the sub-topic of: Innovation & Technology",
+                      "duration": 2134
+                    },
+                    {
+                      "title": "Trying to click on the X close button of the feed page",
+                      "duration": 146
+                    },
+                    {
+                      "title": "Closing the application page",
+                      "duration": 16
+                    }
+                  ],
+                  "startTime": "2025-05-28T21:12:18.021Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c14808d47b386fba9eb-6c356ecaca2349591cc7",
+          "file": "smoke.spec.js",
+          "line": 389,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-05-28T21:10:27.939Z",
+    "duration": 129781.30099999999,
+    "expected": 14,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

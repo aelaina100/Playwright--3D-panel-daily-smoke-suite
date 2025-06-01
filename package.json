@@ -1,0 +1,34 @@
+{
+  "name": "cinco",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "all": "npx playwright test",
+  "clean-test-results-slack": "rimraf test-results.json",
+  "test-slack":  "npm run clean-test-results-slack && (npx playwright test tests/smoke.spec.js --reporter=json > test-results.json || echo Test run failed) && node send-to-slack.js",
+  "with-allure-no-slack": "npx rimraf allure-results allure-report && (npx playwright test tests/smoke.spec.js --reporter=line,allure-playwright || echo Test run failed) && npx allure generate ./allure-results -o ./allure-report --clean && npx allure open ./allure-report"
+}
+,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.14.0",
+    "allure-playwright": "^3.2.1",
+    "bestzip": "^2.2.1",
+    "npm-run-all": "^4.1.5",
+    "playwright-slack-report": "^1.1.89",
+    "rimraf": "^6.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "googleapis": "^148.0.0",
+    "module": "^1.1.0",
+    "nodemailer": "^7.0.3",
+    "open": "^10.1.2",
+    "playwright": "^1.52.0"
+  }
+}
